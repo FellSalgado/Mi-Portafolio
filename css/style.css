@@ -3,10 +3,12 @@
     --secondary-color: #32D4A0;
     --dark-color: #030308;
     --light-color: #F0F6FE;
-
+    --code-color: #f85249;
     --shadow-color: #E2E8F0;
     --line-division: solid 1px #22262a;
+    --b-graficos: solid 2px var(--primary-color);
     --f-family: roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --espaciado: 40px;
 }
 
 * {
@@ -22,6 +24,7 @@ html {
 body {
     background-color: var(--dark-color);
     font-family: var(--f-family);
+    color: white;
     line-height: 1.6;
 }
 
@@ -36,20 +39,16 @@ a {
 }
 
 h1 {
-    color: white;
     font-family: Source Sans Pro, var(--f-family);
 }
-
-.text-gradien {
-    color: var(--color);
-    font-weight: 700;
+p { 
+    color: #999;
+    margin-top: 30px;
 }
-
-p { color: #999; }
 
 nav, header, section, footer {
     margin-inline: 24px;
-    padding: 20px 0;
+    padding: var(--espaciado) 0;
     border-bottom: var(--line-division);
 }
 
@@ -59,54 +58,29 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
+    padding: 1rem;
+    border: dashed 1px var(--primary-color);
 }
 
-nav a {
+nav ul a {
     padding-bottom: 5px;
 }
 
-nav a:focus {
+nav ul a:hover {
     border-bottom: solid 2px var(--primary-color);
-}
-
-.nav_checkbox {
-    display: none;
-}
-
-.nav_toggle {
-    position: absolute;
-    cursor: pointer;
-    right: 0;
 }
 
 .nav_menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 2.1rem;
 }
 
-.nav_menu li {
-    display: none;
-}
 
-#nav_checkbox:checked ~ ul.nav_menu li {
-    display: block;
-}
 
-@media only screen and (min-width: 520px) {
-    .nav_toggle {
-        display: none;
-    }
-
-    .nav_menu {
-        flex-direction: row;
-    }
-
-    .nav_menu li {
-        display: block;
-    }
+/*------------- Header ----------------*/
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
@@ -115,13 +89,84 @@ nav a:focus {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
 }
 
-.text-color {
+span .text-color {
     color: var(--primary-color);
 }
+
+/* Graficos */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--espaciado) 0;
+}
+
+.circle {
+    width: 1rem;
+    height: 1rem;
+    border: var(--b-graficos);
+    border-radius: 100%;
+}
+
+.line {
+    width: 2px;
+    height: 5rem;
+    background: var(--primary-color);
+}
+
+/* Grids */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: var(--espaciado);
+}
+
+.card {
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    padding: 20px 30px;
+    position: relative;
+    border: #333 solid 1px;
+}
+
+section h2:nth-of-type(2) {
+    margin-top: var(--espaciado);
+}
+
+.cards-grid p {
+    font-size: 1.3rem;
+}
+
+.see-code {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+  
+.card:hover .see-code {
+    opacity: 1;
+}
+
+.code {
+    font-weight: bold;
+    color: var(--code-color);
+    /* background: #000; */
+    margin-left: 10px;
+    padding: 3px;
+}
+
 
 
 /*------------- Footer ---------------*/
@@ -139,7 +184,7 @@ footer {
 }
 
 .text-footer li {
-    margin-right: 16px;
+    margin-right: 1rem;
 }
 
 .text-footer a {
@@ -150,24 +195,21 @@ footer {
     text-decoration: underline;
 }
 
-/* Utilidades */
 
-.bu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
 
-@media (max-width: 768px) {
-.cards {
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-}
-
-.card {
-    width: 80px;
-    height: 8rem;
-    margin: 10px;
-    background-color: var(--focus);
+/*--------- Responsive design --------*/
+@media (max-width: 600px) {
+    .nav_menu {
+        flex-direction: column;
+    }
+    .nav_menu a {
+        border-bottom: var(--line-division);
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    header h1 {
+        font-size: 40px;
+    }
 }
