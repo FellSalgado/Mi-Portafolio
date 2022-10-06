@@ -125,17 +125,32 @@ section {
     margin-top: var(--espaciado);
 }
 
-.projects-grid .card {
+.card {
     position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-    padding: 20px 30px;
+    padding: 10px;
     border: solid 1px var(--shadow-color);
 }
 
+.card p {
+    text-align: start;
+    margin-top: 0;
+}
+
 .card .active-line {
-    width: 3px;
-    height: 2rem;
+    width: 1px;
+    height: 3rem;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: var(--inactive-);
+}
+
+.card:hover .active-line {
+    width: 2px;
+    background: var(--c1);
 }
 
 .card .see-code {
