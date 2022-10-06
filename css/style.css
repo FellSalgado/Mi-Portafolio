@@ -191,14 +191,14 @@ section {
 
 
 /*--------- Responsive design --------*/
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .nav_menu {
         flex-direction: column;
     }
     .nav_menu a {
         border-bottom: var(--line-division);
     }
-    .cards-grid {
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
     }
