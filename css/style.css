@@ -1,15 +1,15 @@
 :root {
     --c1: rgb(140, 140, 240);
-    --c2: rgb(140, 240, 140);
-    --c3: rgb(240, 140, 140);
+    --c2: rgb(240, 140, 140);
+    --c3: rgb(140, 240, 140);
     --c4: rgb(240, 240, 140);
     --dark-color: #030308;
     --light-color: #F0F6FE;
     --code-color: #f85249;
-    --shadow-color: #E2E8F0;
     --line-division: solid 1px var(--c1);
-    --f-family: roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --espaciado: 40px;
+    --espaciado: 25px;
+    --margen-l: 24px;
+    --f-family: satoshi, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -25,54 +25,59 @@ html {
 body {
     background-color: var(--dark-color);
     font-family: var(--f-family);
-    color: white;
     line-height: 1.6;
 }
 
-ul {
-    list-style-type: none;
+h1, h2 {
+    font-weight: 600;
+    color: white;
 }
+
+h1 {
+    padding: 1rem 0 2rem 0;
+}
+
+ul { list-style-type: none; }
 
 a {
     text-decoration: none;
     color: var(--light-color);
-    font-family: satoshi, var(--f-family);
 }
 
-h1 {
-    font-family: Source Sans Pro, var(--f-family);
-}
-p { 
+p {
     color: #999;
-    margin-top: 30px;
 }
 
-nav, header, section, footer {
-    margin-inline: 24px;
+nav, header, section {
+    padding: var(--espaciado) var(--margen-l);
+    /*top left bottom right*/
 }
+
+span .text-color {
+    color: var(--bg);
+}
+
 
 
 /*------------- Navbar --------------*/
-.nav {
+.navbar {
+    position: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 5px var(--margen-l);
+    background: #030308;
 }
 
-.nav_menu {
+.navbar ul {
     display: flex;
     gap: 2.1rem;
 }
 
-.nav a {
-    padding-bottom: 5px;
-}
-
-.nav a:hover {
+.navbar ul a:hover {
     border-bottom: solid 2px var(--c1);
 }
-
 
 
 /*------------- Header ----------------*/
@@ -82,25 +87,16 @@ nav, header, section, footer {
 }
 
 
-
 /*------------- Main -----------------*/
 section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
-.text-color {
-    color: var(--bg);
-}
-
 /* Graficos */
-.figure {
+.figure, .flex-center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--espaciado) 0;
 }
 
 .figure .circle {
@@ -120,61 +116,30 @@ section {
 /* Grid */
 .projects-grid {
     display: grid;
+    margin-top: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-top: var(--espaciado);
 }
 
 .card {
     position: relative;
-    display: flex;
-    align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-    padding: 10px;
-    border: solid 1px var(--shadow-color);
+    padding: 30px 20px 30px 20px;
+    border: solid 1px var(--light-color);
 }
 
-.card p {
-    text-align: start;
-    margin-top: 0;
-}
+.card p { text-align: start; }
 
 .card .active-line {
-    width: 1px;
-    height: 3rem;
-    border-radius: 10px;
-    margin-right: 10px;
-    background: var(--inactive-);
-}
-
-.card:hover .active-line {
-    width: 2px;
-    background: var(--c1);
-}
-
-.card .see-code {
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 13px;
     width: 100%;
-    text-align: center;
-    letter-spacing: 3px;
-    transition: all 0.3s ease-in-out;
+    height: 2px;
+    background: var(--c4);
     opacity: 0;
 }
 
-.card:hover .see-code {
+.card:hover .active-line {
     opacity: 1;
-}
-
-.see-code .code {
-    font-weight: bold;
-    color: var(--code-color);
-    margin-left: 10px;
-    padding: 3px;
 }
 
 
@@ -183,8 +148,8 @@ section {
 .footer {
     width: auto;
     max-width: 1280px;
-    margin-top: var(--espaciado);
-    padding: 20px 0 20px 0;
+    margin: 8px var(--margen-l) 50px var(--margen-l);
+    padding-top: 32px;
     border-top: var(--line-division);
 }
 
@@ -193,7 +158,6 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    margin: 8px 0;
 }
 
 .text-footer li {
@@ -209,15 +173,8 @@ section {
 }
 
 
-
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
-    .nav_menu {
-        flex-direction: column;
-    }
-    .nav_menu a {
-        border-bottom: var(--line-division);
-    }
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
