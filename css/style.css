@@ -65,7 +65,7 @@ span .text-color {
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 5px var(--margen-l);
+    padding: 1rem var(--margen-l);
     background: #030308;
 }
 
@@ -142,32 +142,30 @@ section {
 }
 
 
-
 /*------------- Footer ---------------*/
 .footer {
     width: auto;
-    max-width: 1280px;
     margin: 8px var(--margen-l) 50px var(--margen-l);
     padding-top: 32px;
     border-top: var(--line-division);
 }
 
-.text-footer {
+.footer ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.text-footer li {
+.footer li {
     margin-right: 1rem;
 }
 
-.text-footer a {
+.footer a {
     font-size: 13px;
 }
 
-.text-footer a:hover {
+.footer a:hover {
     text-decoration: underline;
 }
 
@@ -175,7 +173,7 @@ section {
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 50px;
     }
     header h1 {
