@@ -3,12 +3,10 @@
     --c2: rgb(240, 140, 140);
     --c3: rgb(140, 240, 140);
     --c4: rgb(240, 240, 140);
-    --dark-color: #030308;
-    --light-color: #F0F6FE;
-    --code-color: #f85249;
-    --line-division: solid 1px var(--c1);
-    --espaciado: 25px;
-    --margen-l: 24px;
+    --bg-color: #030309;
+    --txt-color: #F9F9FE;
+    --line: solid 1px #aaa;
+    --padding: 1rem 1.5rem;
     --f-family: satoshi, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
@@ -21,19 +19,20 @@ html {
     scroll-behavior: smooth;
 }
 
+header, section {
+    padding: var(--padding);
+}
+
 /* Basic Styles */
 body {
-    background-color: var(--dark-color);
+    background-color: var(--bg-color);
     font-family: var(--f-family);
     line-height: 1.6;
 }
 
-h1, h2 {
-    font-weight: 600;
-    color: white;
-}
-
 h1 {
+    font: normal 600 2rem satoshi, var(--f-family);
+    color: var(--light-color);
     padding: 1rem 0 2rem 0;
 }
 
@@ -44,16 +43,9 @@ a {
     color: var(--light-color);
 }
 
-p {
-    color: #999;
-}
+p { color: #999; }
 
-nav, header, section {
-    padding: var(--espaciado) var(--margen-l);
-    /*top left bottom right*/
-}
-
-span .text-color {
+.text-color {
     color: var(--bg);
 }
 
@@ -64,9 +56,7 @@ span .text-color {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: auto;
-    padding: 1rem var(--margen-l);
-    background: #030308;
+    background: var(--dark-color);
 }
 
 .navbar ul {
@@ -120,7 +110,7 @@ section {
     gap: 40px;
 }
 
-.card {
+.projects-grid .card {
     position: relative;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
@@ -128,26 +118,15 @@ section {
     border: solid 1px var(--light-color);
 }
 
-.card p { text-align: start; }
-
-.card .active-line {
-    width: 100%;
-    height: 2px;
-    background: var(--c4);
-    opacity: 0;
-}
-
-.card:hover .active-line {
-    opacity: 1;
-}
+.projects-grid .card p { text-align: start; }
 
 
 /*------------- Footer ---------------*/
 .footer {
-    width: auto;
+    width: min(100% - 15px, 840px);
     margin: 8px var(--margen-l) 50px var(--margen-l);
     padding-top: 32px;
-    border-top: var(--line-division);
+    border-top: var(--line);
 }
 
 .footer ul {
