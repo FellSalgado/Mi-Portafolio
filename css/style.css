@@ -7,7 +7,7 @@
     --txt-color: #F9F9FE;
     --line: solid 1px #aaa;
     --padding: 1rem 1.5rem;
-    --f-family: satoshi, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-family: satoshi, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -26,13 +26,13 @@ header, section {
 /* Basic Styles */
 body {
     background-color: var(--bg-color);
-    font-family: var(--f-family);
+    font-family: var(--font-family);
     line-height: 1.6;
 }
 
 h1 {
-    font: normal 600 2rem satoshi, var(--f-family);
-    color: var(--light-color);
+    font: normal 600 2rem Source sans pro, var(--font-family);
+    color: var(--txt-color);
     padding: 1rem 0 2rem 0;
 }
 
@@ -40,7 +40,7 @@ ul { list-style-type: none; }
 
 a {
     text-decoration: none;
-    color: var(--light-color);
+    color: var(--txt-color);
 }
 
 p { color: #999; }
@@ -49,14 +49,13 @@ p { color: #999; }
     color: var(--bg);
 }
 
-
 /*------------- Navbar --------------*/
 .navbar {
     position: fixed;
     display: flex;
     justify-content: center;
     width: 100%;
-    background: var(--dark-color);
+    background-color: var(--bg-color);
 }
 
 .navbar ul {
@@ -68,64 +67,65 @@ p { color: #999; }
     border-bottom: solid 2px var(--c1);
 }
 
-
 /*------------- Header ----------------*/
 .header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-
 /*------------- Main -----------------*/
-section {
-    text-align: center;
-}
-
-/* Graficos */
-.figure, .flex-center {
+.figure {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .figure .circle {
-    width: 1rem;
-    height: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
     border: solid 2px var(--bg);
     border-radius: 100%;
-    box-shadow: 0 0 3px 0 var(--bg);
 }
 
 .figure .line {
     width: 1px;
     height: 5rem;
-    background: linear-gradient(to top, var(--bg) 10%, var(--dark-color) 90%);
+    background: linear-gradient(to top, var(--bg) 10%, var(--bg-color) 90%);
 }
 
 /* Grid */
 .projects-grid {
     display: grid;
     margin-top: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            150px,
+            1fr
+        )
+    );
     gap: 40px;
 }
 
 .projects-grid .card {
+    will-change: transform;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
     padding: 30px 20px 30px 20px;
-    border: solid 1px var(--light-color);
+    border: solid 1px #F7F7FE;
 }
 
-.projects-grid .card p { text-align: start; }
-
+.projects-grid .card:hover {
+    transform: scale(1.1);
+    border-color: white;
+}
 
 /*------------- Footer ---------------*/
 .footer {
-    width: min(100% - 15px, 840px);
-    margin: 8px var(--margen-l) 50px var(--margen-l);
-    padding-top: 32px;
+    width: auto;
+    margin: 2rem 1.5rem;
+    padding-top: 2rem;
     border-top: var(--line);
 }
 
@@ -151,10 +151,6 @@ section {
 
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
     header h1 {
         font-size: 40px;
     }
