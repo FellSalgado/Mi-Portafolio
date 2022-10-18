@@ -7,6 +7,7 @@
     --cc3: #408040;
     --bg-color: #030309;
     --txt-color: #F9F9FE;
+    --transparent-color: rgb(50 50 52 / 10%);
     --padding-inline: 3rem;
     --border-color: solid 1px #999;
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -87,17 +88,17 @@ p { color: #999; }
 /*------------- Header ----------------*/
 .b-profile {
     height: 18rem;
-    background-color: rgb(50 50 52 / 10%);
+    background-color: var(--transparent-color);
     border-bottom: dashed 2px var(--c1);
 }
 
 .b-profile .b-profile-repeat {
     width: 80%;
     height: 80%;
-    background-color: rgb(50 50 52 / 10%);
+    background-color: var(--transparent-color);
 }
 
-.photo-profile {
+.image-profile {
     width: 100%;
     height: 100%;
     background: url(../recursos/img/569.jpg);
@@ -265,20 +266,35 @@ p { color: #999; }
 .card {
     will-change: transform;
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
     padding: 30px 20px 30px 20px;
     border: var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
 
-.card:hover {
+.card:hover, svg:hover {
     transform: scale(1.1);
     border-color: white;
 }
 
+.contactar {
+    width: auto;
+    border: var(--border-color);
+}
+
+.a {
+    display: flex;
+    justify-content: space-between;
+}
+
+svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(100%);
+}
+
 /*------------- Footer ---------------*/
 .footer {
-    width: auto;
     padding: 2rem var(--padding-inline);
     padding-top: 2rem;
     border-top: var(--border-color);
