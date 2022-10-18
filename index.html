@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar flex-center">
         <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Skills</a></li>
@@ -21,47 +21,71 @@
 
     <!-- Header -->
     <header class="header">
-        <h1>Hola, Soy Felix Gonzalo
-        </h1>
+        <div class="grid-auto">
+            <div>
+                <h1>Hola, mi nombre es Felix Gonzalo
+                    y te ofresco servicios de:
+                </h1>
+                <ul>
+                    <li>
+                        <p>Desarrollador Front-End</p>
+                    </li>
+                    <li>
+                        <p>Diseñador UI</p>
+                    </li>
+                    <li>
+                        <p>Creador de contenido</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="b-profile flex-center">
+                <div class="b-profile-repeat flex-center">
+                    <div class="b-profile-repeat flex-center">
+                        <div class="b-profile-repeat flex-center">
+                            <img class="photo-profile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Main -->
     <main>
         <section style="--bg: var(--c1)">
-            <div class="figure">
-                <div class="line"></div>
-                <div class="circle"></div>
             </div>
             <h1>About</h1>
-            <p>Lorem adipisicing elit. Eaque, sed, beatae nemo, sunt quo natus facere a vel quia libero odit. Odit, culpa asperiores eum id perspiciatis quibusdam corporis itaque.</p>
+            <div class="line"></div>
+            <p>
+                Lorem adipisicing elit. Eaque, sed, beatae nemo, sunt quo natus facere a vel quia libero odit. Odit, culpa
+                asperiores eum id perspiciatis quibusdam corporis itaque.
+            </p>
         </section>
 
         <section style="--bg: var(--c2)">
-            <div class="figure">
-                <div class="line" ></div>
-                <div class="circle"></div>
-            </div>
             <h1>Skills</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quia magni, animi earum porro vel nobis rem explicabo numquam accusamus accusantium. Veritatis, reprehenderit voluptatum facilis atque unde obcaecati dicta ad?</p>
+            <div class="line"></div>
+            <p>Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Sed quia magni, animi earum porro vel nobis rem
+                explicabo numquam accusamus accusantium. Veritatis, reprehenderit voluptatum facilis atque unde obcaecati dicta ad?
+            </p>
         </section>
 
         <section style="--bg: var(--c3)">
-            <div class="figure">
-                <div class="line"></div>
-                <div class="circle"></div>
-            </div>
             <h1>Education</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit error optio, autem ut modi delectus illum aut consequuntur tempora et doloribus officia, aliquid accusamus culpa veniam quidem nam molestiae praesentium!</p>
+            <div class="line"></div>
+            <p>
+                Lorem ipsum
+                sit amet consectetur adipisicing elit. Velit error optio, autem ut modi delectus illum aut consequuntur tempora et doloribus officia, aliquid accusamus culpa veniam quidem nam molestiae praesentium!
+            </p>
         </section>
 
-        <section style="--bg: var(--c4)">
-            <div class="figure">
-                <div class="line"></div>
-                <div class="circle"></div>
-            </div>
-            <h1>Projects</h1>
+        <section style="--bg: var(--c2)">
+            <header class="flex-center">
+                <h1>Projects</h1>
+            </header>
             <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <div class="projects-grid">
+            <div class="grid-auto">
                 <div class="card">
                     <p>
                         <span class="text-color">Lorem ipsum dolor</span>
@@ -82,13 +106,25 @@
                 </div>
             </div>
         </section>
+
+        <div class="btn">
+            <span aria-hidden="true" class="button-bg bg-1"></span>
+            <span aria-hidden="true" class="button-bg bg-2"></span>
+            <span aria-hidden="true" class="button-bg bg-3"></span>
+            <div href="" class="hero_gradient-button__kkwJu flex-center">
+                <a href="">
+                    Contactame
+                </a>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <ul>
-            <li><a href="">Terminos</a></li>
+            <li><a href="">Licencias</a></li>
         </ul>
+        <ul>linkedin github twitter</ul>
     </footer>
 
     <script src="js/script.js"></script>
