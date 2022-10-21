@@ -171,7 +171,7 @@ section .line {
 }
 
 #projects, #contacto {
-    margin: 3rem;
+    margin: var(--padding-inline);
     background-color: var(--transparent-color);
     border: solid 1px #555;
     border-radius: 7px;
@@ -344,12 +344,16 @@ section .line {
 
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
+    :root {
+        --padding-inline: 2rem;
+    }
     .header .principal {
         height: 20rem;
-        padding-left: 2rem;
     }
     #projects {
-        padding: 1rem;
+        margin: 0;
+        border: none;
+        border-radius: 0;
     }
     .card:hover {
         transform: none;
