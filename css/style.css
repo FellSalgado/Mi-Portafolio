@@ -11,6 +11,7 @@
     --nav-color: rgb(12, 12, 18);
     --transparent-color: rgb(54 54 56 / 10%);
     --border-color: solid 1px #999;
+    --svg: invert(100%);
     --padding-inline: 3rem;
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
@@ -57,6 +58,11 @@ p { color: var(--txt-secondary); }
     align-items: center;
 }
 
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .grid-auto {
     display: grid;
     margin-top: 2rem;
@@ -73,7 +79,7 @@ p { color: var(--txt-secondary); }
 svg {
     width: 1.5rem;
     height: 1.5rem;
-    filter: invert(100%);
+    filter: var(--svg);
 }
 
 svg:hover {
@@ -97,14 +103,22 @@ svg:hover {
     border-bottom: solid 2px var(--c1);
 }
 
+.navbar ul button {
+    background-color: var(--nav-color);
+    color: var(--txt);
+    border: var(--border-color);
+    padding-inline: 5px;
+    border-radius: 0.5rem;
+}
+
 /*------------- Header ----------------*/
 .header {
-    background: linear-gradient(0deg, var(--nav-color) 50%, var(--bg-color) 50%);
+    background: linear-gradient(10deg, var(--nav-color) 50%, var(--bground) 50%);
 }
 
 .header .b-profile {
-    width: 16rem;
-    height: 16rem;
+    width: 14rem;
+    height: 14rem;
     background-color: var(--transparent-color);
     border-radius: 100%;
 }
@@ -125,18 +139,9 @@ svg:hover {
 }
 
 .header .principal {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-}
-
-.header .principal .socials {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
-
-
 
 /*------------- Main -----------------*/
 .header, section {
@@ -166,8 +171,6 @@ section .line {
 }
 
 #projects, #contacto {
-    display: flex;
-    flex-direction: column;
     margin: 3rem;
     background-color: var(--transparent-color);
     border: solid 1px #555;
@@ -345,10 +348,20 @@ section .line {
         height: 20rem;
         padding-left: 2rem;
     }
+    #projects {
+        padding: 1rem;
+    }
+    .card:hover {
+        transform: none;
+    }
 }
 
 .oscuro {
-    --bg-color: #fbfbfa;
-    --txt-color: #030409;
+    --bground: #fbfbfa;
+    --txt: #030409;
+    --txt-secondary: #444;
     --nav-color: #e2e2dd;
+    --c1: #101010;
+    --svg: invert(20%);
+    --transparent-color: #f2f2f0;
 }
