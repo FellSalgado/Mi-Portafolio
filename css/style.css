@@ -29,6 +29,7 @@ html {
 /* Basic Styles */
 body {
     background-color: var(--bground);
+    color: var(--txt-secondary);
     font-family: var(--font-family);
     line-height: 1.6;
 }
@@ -45,8 +46,6 @@ a {
     text-decoration: none;
     color: var(--txt);
 }
-
-p { color: var(--txt-secondary); }
 
 .text-color {
     color: var(--bg);
@@ -83,14 +82,13 @@ svg {
     filter: var(--svg);
 }
 
-svg:hover { transform: scale(1.2);}
-
 /*------------- Navbar --------------*/
 .navbar {
     position: fixed;
     width: 100%;
     padding: 0.4rem var(--padding-inline);
     background-color: var(--nav-color);
+    z-index: 10;
 }
 
 .navbar ul {
@@ -112,27 +110,29 @@ svg:hover { transform: scale(1.2);}
 
 /*------------- Header ----------------*/
 .header {
-    background: linear-gradient(10deg, var(--nav-color) 50%, var(--bground) 50%);
+    background: linear-gradient(9deg, var(--nav-color) 50%, var(--bground) 50%);
+    padding: 7rem var(--padding-inline) 2.3rem var(--padding-inline);
 }
 
-.header h1 {
-    margin-bottom: 0;
+.header .text-color {
+    color: var(--c1);
 }
 
-.header .b-profile {
+.header .profile {
     width: 14rem;
     height: 14rem;
     background-color: var(--transparent-color);
     border-radius: 100%;
+    top: -20rem;
 }
 
-.header .b-profile-repeat, .image-profile {
+.header .profile-repeat, .image-profile {
     width: 80%; height: 80%;
     border: solid 1px var(--border-secondary);
     border-radius: 100%;
 }
 
-.header .b-profile-repeat {
+.header .profile-repeat {
     background-color: var(--transparent-color);
 }
 
@@ -141,13 +141,8 @@ svg:hover { transform: scale(1.2);}
     background-size: 100%;
 }
 
-.header .principal {
-    width: 100%;
-    flex-direction: column;
-}
-
 /*------------- Main -----------------*/
-.header, section {
+section {
     padding: 2.3rem var(--padding-inline);
 }
 
@@ -157,6 +152,18 @@ section .line {
     background: var(--bg);
     border-radius: 1rem;
     margin-bottom: 1.5rem;
+}
+
+.certificates {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+}
+
+.certificates section {
+    padding: 0;
+    border-bottom: solid 1px var(--border-secondary);
 }
 
 .card {
@@ -169,7 +176,6 @@ section .line {
 
 .card:hover {
     transform: scale(1.1);
-    cursor: pointer;
     background-color: var(--transparent-color);
     border-color: var(--txt);
 }
@@ -375,10 +381,10 @@ section .line {
 }
 
 .oscuro {
-    --bground: #fbfbfa;
-    --txt: #3c4043;
+    --bground: #f8f8f2;
+    --txt: #3a3d3f;
     --txt-secondary: #444;
-    --nav-color: #e2e2dd;
+    --nav-color: #e2e2e0;
     --border-secondary: #cbcbca;
     --svg: invert(50%);
     --transparent-color: #f2f2f0;
