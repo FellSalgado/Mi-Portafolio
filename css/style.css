@@ -123,7 +123,6 @@ svg {
     height: 14rem;
     background-color: var(--transparent-color);
     border-radius: 100%;
-    top: -20rem;
 }
 
 .header .profile-repeat, .image-profile {
@@ -152,13 +151,6 @@ section .line {
     background: var(--bg);
     border-radius: 1rem;
     margin-bottom: 1.5rem;
-}
-
-.certificates {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 1rem;
 }
 
 .certificates section {
@@ -357,18 +349,12 @@ section .line {
     :root {
         --padding-inline: 2rem;
     }
-    .navbar {
-        justify-content: center;
-    }
     .navbar p {
         display: none;
         /*visibility: hidden;*/
     }
     .navbar ul {
         gap: 1rem;
-    }
-    .header .principal {
-        height: 15rem;
     }
     #projects {
         margin: 0;
