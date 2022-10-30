@@ -15,6 +15,7 @@
     --svg: invert(100%);
     --padding-inline: 3rem;
     --font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --offset-height: 100px;
 }
 
 * {
@@ -34,10 +35,17 @@ body {
     line-height: 1.6;
 }
 
-h1 {
-    font: normal 500 2rem Source sans pro, var(--font-family);
+h1, h2 {
     color: var(--txt);
-    margin-bottom: 25px;
+}
+
+h1 {
+    font: normal 500 2rem var(--font-family);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.6rem;
 }
 
 ul { list-style-type: none; }
@@ -51,7 +59,15 @@ a {
     color: var(--bg);
 }
 
-.flex-center, .figure {
+.icon {
+    border-radius: 100%;
+    border: var(--border-secondary);
+    width: 3rem;
+    height: 3rem;
+    padding: 12px;
+}
+
+.flex-center, .icon {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,12 +90,6 @@ a {
         )
     );
     gap: 40px;
-}
-
-svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    filter: var(--svg);
 }
 
 /*------------- Navbar --------------*/
@@ -110,39 +120,64 @@ svg {
 
 /*------------- Header ----------------*/
 .header {
-    background: linear-gradient(9deg, var(--nav-color) 50%, var(--bground) 50%);
+    background: var(--nav-color);
     padding: 7rem var(--padding-inline) 2.3rem var(--padding-inline);
 }
 
-.header .text-color {
-    color: var(--c1);
+.header h1 {
+    font: normal 500 2.5rem 'Bebas neue';
 }
 
-.header .profile {
-    width: 14rem;
-    height: 14rem;
-    background-color: var(--transparent-color);
-    border-radius: 100%;
+.header h1 .text-color {
+    background: linear-gradient(10deg, var(--c1) 40%, var(--cc1) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.header .profile-repeat, .image-profile {
-    width: 80%; height: 80%;
-    border: var(--border-secondary);
-    border-radius: 100%;
+.header .space-between {
+    width: 18rem;
+    margin-top: 2rem;
 }
 
-.header .profile-repeat {
-    background-color: var(--transparent-color);
+.header button {
+    all: unset;
+    border: solid 2px;
+    border-image-source: linear-gradient(
+        to bottom right, var(--c1), var(--cc1)
+    );
+    border-image-slice: 4;
+    padding-inline: 8px;
 }
 
-.header .image-profile {
-    background: url(../recursos/img/569.jpg);
-    background-size: 100%;
+.header .icon {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    padding: 8px;
+}
+
+.header .icon svg {
+    filter: var(--svg);
+}
+
+.a {
+    top: 4rem;
+    right: 14rem;
+}
+
+.b {
+    top: 6.8rem;
+    right: 12rem;
+}
+
+.c {
+    top: 10rem;
+    right: 11.4rem;
 }
 
 /*------------- Main -----------------*/
 section {
-    padding: 2.3rem var(--padding-inline);
+    padding: 3rem var(--padding-inline) 1rem var(--padding-inline);
 }
 
 section .line {
@@ -153,31 +188,51 @@ section .line {
     margin-bottom: 1.5rem;
 }
 
+.container {
+    background-color: var(--transparent-color);
+    border: var(--border-secondary);
+    border-radius: 7px;
+    padding: var(--padding-inline);
+}
+
 #education section {
     display: flex;
     padding: 0;
-    margin-top: 0.2rem;
 }
 
-.figure {
-    margin-right: 1rem;
+#education section h2 {
+    margin-top: -0.8rem;
 }
 
-.figure .line {
+#education section .i {
+    margin-top: 1.5rem;
+}
+
+#education .figure {
+    margin-right: 2rem;
+}
+
+#education .figure .line {
     width: 1px;
-    height: 100%;
+    height: 9rem;
+    margin-inline: auto;
     margin-bottom: 0;
     background: var(--txt-secondary);
 }
 
-.figure .circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 100%;
-    background: var(--txt-secondary);
+#education .figure .line1 {
+    height: 2rem;
 }
 
-.card {
+#education .figure .circle {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 100%;
+    background: var(--bground);
+    border: solid 2px var(--txt-secondary);
+}
+
+#projects .card {
     position: relative;
     padding: 30px 20px 30px 20px;
     border: var(--border-color);
@@ -185,21 +240,13 @@ section .line {
     box-shadow: 0 0 10px rgb(50 50 50 / 10%);
 }
 
-.card:hover {
+#projects .card:hover {
     transform: scale(1.1);
     background-color: var(--transparent-color);
-    border-color: var(--txt);
-}
-
-#projects, #contacto {
-    margin: var(--padding-inline);
-    background-color: var(--transparent-color);
-    border: var(--border-secondary);
-    border-radius: 7px;
 }
 
 .btn .btn-content {
-    width: 7.9rem;
+    width: 8rem;
     background-clip: padding-box;
     background-color: var(--bground);
     color: var(--txt);
@@ -365,32 +412,39 @@ section .line {
 
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
-    :root {
-        --padding-inline: 2rem;
-    }
     .navbar p {
         display: none;
-        /*visibility: hidden;*/
     }
     .navbar ul {
         gap: 1rem;
     }
-    #projects {
-        margin: 0;
-        border: none;
-        border-radius: 0;
+    .a {
+        top: 4rem;
+        right: 5rem;
     }
-    .card:hover {
+    .b {
+        top: 6.8rem;
+        right: 3rem;
+    }
+    .c {
+        top: 10rem;
+        right: 2.4rem;
+    }
+    #projects{
+        padding: 0;
+    }
+    #projects .card:hover {
         transform: none;
     }
 }
 
 .oscuro {
-    --bground: #f8f8f2;
-    --txt: #3a3d3f;
-    --txt-secondary: #444;
-    --nav-color: #e2e2e0;
-    --border-secondary: #cbcbca;
+    --c2: #ffd369;
+    --bground: #fafafa;
+    --txt: #4e4e4e;
+    --txt-secondary: #555;
+    --nav-color: #f6f6f6;
+    --border-secondary: solid 1px #cbcbca;
     --svg: invert(50%);
     --transparent-color: #f2f2f0;
 }
