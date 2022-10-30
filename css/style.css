@@ -67,7 +67,7 @@ a {
     padding: 12px;
 }
 
-.flex-center, .icon, .container, .card, .hero {
+.flex-center, .icon, .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +121,7 @@ a {
 /*------------- Header ----------------*/
 .header {
     background: var(--nav-color);
-    padding: 7rem var(--padding-inline) 2.3rem var(--padding-inline);
+    padding: 7rem var(--padding-inline) 3rem var(--padding-inline);
     text-align: center;
 }
 
@@ -177,25 +177,28 @@ a {
 
 /*------------- Main -----------------*/
 section {
-    padding: 3rem var(--padding-inline) 1rem var(--padding-inline);
-}
-
-section .line {
-    width: 9rem;
-    height: 2px;
-    background: var(--bg);
-    border-radius: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 3rem var(--padding-inline) 3rem var(--padding-inline);
 }
 
 .container {
+    padding: var(--padding-inline);
     background-color: var(--transparent-color);
     border: var(--border-secondary);
+    text-align: center;
     border-radius: 7px;
-    padding: var(--padding-inline);
 }
 
-#skills .container .icon {
+.card {
+    border: var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgb(50 50 50 / 10%);
+}
+
+#skills .card {
+    padding: 1.5rem;
+}
+
+#skills .card .icon {
     margin-bottom: 1rem;
 }
 
@@ -238,12 +241,6 @@ section .line {
     border-radius: 100%;
     background: var(--nav-color);
     border: solid 2px var(--txt-secondary);
-}
-
-#projects .card {
-    border: var(--border-color);
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgb(50 50 50 / 10%);
 }
 
 #projects .card img {
@@ -444,10 +441,10 @@ section .line {
         top: 10rem;
         right: 1.4rem;
     }
-    #projects{
+    #skills, #projects{
         padding: 0;
     }
-    #projects .container {
+    .container {
         border: none;
         border-radius: 0;
     }
