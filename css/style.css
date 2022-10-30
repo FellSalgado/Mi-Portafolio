@@ -77,6 +77,7 @@ a {
 .space-between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .grid-auto {
@@ -122,6 +123,7 @@ a {
 .header {
     background: var(--nav-color);
     padding: 7rem var(--padding-inline) 2.3rem var(--padding-inline);
+    text-align: center;
 }
 
 .header h1 {
@@ -134,11 +136,6 @@ a {
     -webkit-text-fill-color: transparent;
 }
 
-.header .space-between {
-    width: 18rem;
-    margin-top: 2rem;
-}
-
 .header button {
     all: unset;
     border: solid 2px;
@@ -147,6 +144,10 @@ a {
     );
     border-image-slice: 4;
     padding-inline: 8px;
+}
+
+.header .btn {
+    z-index: 100;
 }
 
 .header .icon {
@@ -204,6 +205,10 @@ section .line {
     margin-top: -0.8rem;
 }
 
+#education section p {
+    margin-bottom: 2rem;
+}
+
 #education section .i {
     margin-top: 1.5rem;
 }
@@ -214,7 +219,7 @@ section .line {
 
 #education .figure .line {
     width: 1px;
-    height: 9rem;
+    height: 100%;
     margin-inline: auto;
     margin-bottom: 0;
     background: var(--txt-secondary);
@@ -234,7 +239,7 @@ section .line {
 
 #projects .card {
     position: relative;
-    padding: 30px 20px 30px 20px;
+    padding: 2rem 1rem 2rem 1rem;
     border: var(--border-color);
     border-radius: 4px;
     box-shadow: 0 0 10px rgb(50 50 50 / 10%);
@@ -272,7 +277,7 @@ section .line {
 
 .btn .button-bg, .btn .button-bg:before {
     position: absolute;
-    width: 8rem;
+    width: 8.1rem;
     content: "";
     background-image: linear-gradient(
         165deg,
@@ -412,6 +417,9 @@ section .line {
 
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
+    :root {
+        --padding-inline: 2rem;
+    }
     .navbar p {
         display: none;
     }
@@ -420,18 +428,21 @@ section .line {
     }
     .a {
         top: 4rem;
-        right: 5rem;
+        right: 4rem;
     }
     .b {
         top: 6.8rem;
-        right: 3rem;
+        right: 2rem;
     }
     .c {
         top: 10rem;
-        right: 2.4rem;
+        right: 1.4rem;
     }
     #projects{
         padding: 0;
+    }
+    #projects .container {
+        border-radius: 0;
     }
     #projects .card:hover {
         transform: none;
