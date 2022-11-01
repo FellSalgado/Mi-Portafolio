@@ -67,7 +67,7 @@ a {
     padding: 12px;
 }
 
-.flex-center, .icon, .card {
+.flex-center, .icon, .card, .animated {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,18 +110,19 @@ a {
     border-bottom: solid 2px var(--c1);
 }
 
-.navbar ul button {
+.navbar .space-between .btn {
     background-color: var(--nav-color);
     color: var(--txt);
     border: var(--border-color);
     padding-inline: 5px;
     border-radius: 0.5rem;
+    margin-left: 1rem;
 }
 
 /*------------- Header ----------------*/
 .header {
     background: var(--nav-color);
-    padding: 7rem var(--padding-inline) 3rem var(--padding-inline);
+    padding: 7rem var(--padding-inline) 0 var(--padding-inline);
     text-align: center;
 }
 
@@ -143,10 +144,6 @@ a {
     );
     border-image-slice: 4;
     padding-inline: 8px;
-}
-
-.header .btn {
-    z-index: 100;
 }
 
 .header .icon {
@@ -184,7 +181,6 @@ section {
     padding: var(--padding-inline);
     background-color: var(--transparent-color);
     border: var(--border-secondary);
-    text-align: center;
     border-radius: 7px;
 }
 
@@ -215,10 +211,6 @@ section {
     margin-bottom: 2rem;
 }
 
-#education section .i {
-    margin-top: 1.5rem;
-}
-
 #education .figure {
     margin-right: 2rem;
 }
@@ -229,10 +221,6 @@ section {
     margin-inline: auto;
     margin-bottom: 0;
     background: var(--txt-secondary);
-}
-
-#education .figure .line1 {
-    height: 2rem;
 }
 
 #education .figure .circle {
@@ -441,7 +429,7 @@ section {
         top: 10rem;
         right: 1.4rem;
     }
-    #skills, #projects{
+    #skills, #projects {
         padding: 0;
     }
     .container {
