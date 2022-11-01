@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
     --c1: #8c8cf0;
     --c2: #f0f08c;
@@ -59,15 +61,7 @@ a {
     color: var(--bg);
 }
 
-.icon {
-    border-radius: 100%;
-    border: var(--border-secondary);
-    width: 3rem;
-    height: 3rem;
-    padding: 12px;
-}
-
-.flex-center, .icon, .card, .animated {
+.flex-center, .icon, .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +130,28 @@ a {
     -webkit-text-fill-color: transparent;
 }
 
+.header .animation {
+    display: block;
+    white-space: nowrap;
+    border-right: 3px solid;
+    width: 12ch;
+    animation: typing 2s steps(12),
+    blink 5s infinite step-end alternate;
+    overflow: hiden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 .header button {
     all: unset;
     border: solid 2px;
@@ -148,9 +164,8 @@ a {
 
 .header .icon {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
-    padding: 8px;
+    width: 1rem;
+    height: 1rem;
 }
 
 .header .icon svg {
@@ -196,6 +211,11 @@ section {
 
 #skills .card .icon {
     margin-bottom: 1rem;
+    border-radius: 100%;
+    border: var(--border-secondary);
+    width: 3rem;
+    height: 3rem;
+    padding: 12px;
 }
 
 #education section {
@@ -429,8 +449,8 @@ section {
         top: 10rem;
         right: 1.4rem;
     }
-    #skills, #projects {
-        padding: 0;
+    #about, #skills, #education, #projects {
+        padding: 1rem 0 0 0;
     }
     .container {
         border: none;
@@ -451,3 +471,142 @@ section {
     --svg: invert(50%);
     --transparent-color: #fff;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 0.4rem;
+  }
+  
+  .main-logo {
+    color: black;
+    font-size: 32px;
+    text-decoration: none;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+  }
+  
+  .main-nav.show {
+    margin-left: 0;
+  }
+  
+  .nav-links {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .link-item {
+    margin-top: 2rem;
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .link-item::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  }
+  
+  .link-item:hover::after {
+    width: 100%;
+  }
+  
+  .button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #444444;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #ffffff;
+  }
+  
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .button-menu {
+      display: none;
+    }
+  
+    .main-logo {
+      flex-basis: 30%;
+    }
+  
+    .main-nav {
+      position: static;
+      margin-left: 0;
+      flex-basis: 70%;
+      height: 100%;
+    }
+  
+    .nav-links {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      background: white;
+    }
+  
+    .link-item {
+      display: inline-block;
+      margin-top: 0;
+      margin-right: 2rem;
+    }
+  }
