@@ -29,9 +29,6 @@
         <h1>Hola, soy <span class="text-color">Felix</span></h1>
         <h2>Desarrollador Front-End</h2>
         <br>
-        <div class="space-between">
-            <button>download resume</button>
-        </div>
         <a href="https://github.com/FellSalgado">
             <div class="icon a">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -52,10 +49,12 @@
     <!-- Main -->
     <main>
         <section id="about" data-aos="fade-up" tyle="--bg: var(--c1)">
-            <h1>Sobre mi</h1>
-            <p>
+            <div class="container">
+                <h1>Sobre mi</h1>
+                <p>
                 Soy desarrollador Front-End con sede en Leticia, Colombia, mi objetivo es expandir mi conocimiento y crecer como desarrollador.
-            </p>
+                </p>
+            </div>
         </section>
 
         <section id="skills" data-aos="fade-up" style="--bg: var(--c2)">
@@ -109,16 +108,18 @@
                     <div class="card">
                         <div class="icon">
                             <svg viewBox="0 0 128 128">
-                                <path d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0" fill="#38b2ac"></path>
+                                <defs><linearGradient id="bootstrap-original-a" x1="76.079" x2="523.48" y1="10.798" y2="365.95" gradientTransform="translate(1.11 14.613) scale(.24566)" gradientUnits="userSpaceOnUse"><stop stop-color="#9013fe" offset="0"></stop><stop stop-color="#6610f2" offset="1"></stop></linearGradient><linearGradient id="bootstrap-original-b" x1="193.51" x2="293.51" y1="109.74" y2="278.87" gradientTransform="translate(0 52)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" offset="0"></stop><stop stop-color="#f1e5fc" offset="1"></stop></linearGradient><filter id="bootstrap-original-c" x="161.9" y="135.46" width="197" height="249" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix><feOffset dy="4"></feOffset><feGaussianBlur stdDeviation="8"></feGaussianBlur><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend></filter></defs><path d="M14.985 27.712c-.237-6.815 5.072-13.099 12.249-13.099h73.54c7.177 0 12.486 6.284 12.249 13.099-.228 6.546.068 15.026 2.202 21.94 2.141 6.936 5.751 11.319 11.664 11.883v6.387c-5.913.564-9.523 4.947-11.664 11.883-2.134 6.914-2.43 15.394-2.202 21.94.237 6.815-5.072 13.098-12.249 13.098h-73.54c-7.177 0-12.486-6.284-12.249-13.098.228-6.546-.068-15.026-2.203-21.94-2.14-6.935-5.76-11.319-11.673-11.883v-6.387c5.913-.563 9.533-4.947 11.673-11.883 2.135-6.914 2.43-15.394 2.203-21.94z" fill="url(#bootstrap-original-a)"></path><path transform="translate(1.494 2.203) scale(.24566)" d="M267.1 364.46c47.297 0 75.798-23.158 75.798-61.355 0-28.873-20.336-49.776-50.532-53.085v-1.203c22.185-3.609 39.594-24.211 39.594-47.219 0-32.783-25.882-54.138-65.322-54.138h-88.74v217zm-54.692-189.48h45.911c24.958 0 39.131 11.128 39.131 31.279 0 21.505-16.484 33.535-46.372 33.535h-38.67zm0 161.96v-71.431h45.602c32.661 0 49.608 12.03 49.608 35.49 0 23.459-16.484 35.941-47.605 35.941z" fill="url(#bootstrap-original-b)" filter="url(#bootstrap-original-c)" stroke="#fff"></path>
                             </svg>
                         </div>
+                        <p>bootstrap</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="education" data-aos="fade-up" style="--bg: var(--c3)">
-            <h1>Educación</h1>
+            <div class="container">
+                <h1>Educación</h1>
             <div class="line"></div>
             <p>
                 Lorem ipsum
@@ -189,6 +190,7 @@
                         9578337936TI1064981680C</p>
                 </div>
             </section>
+            </div>
         </section>
 
         <section id="projects" data-aos="fade-up" style="--bg: var(--c2)">
@@ -266,16 +268,16 @@
             <li><a href="">Licencias</a></li>
             <li><a href="https://github.com/FellSalgado">GitHub</a></li>
             <li><a href="">Twitter</a></li>
-            <li><a href="">Linkedin</a></li>
+            <li><a href="https://www.linkedin.com/in/felix-salgado-949a99247/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B9krVdxnCT%2FGSgfOkd2q5aQ%3D%3D">Linkedin</a></li>
             <li><p>| Elaborado con 💙 por Felix Salgado</p></li>
         </ul>
     </footer>
 
-    <script src="./js/aos.js"></script>
+    <script src="./js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 1000,
         });
     </script>
 </body>

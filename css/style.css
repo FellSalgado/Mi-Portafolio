@@ -122,7 +122,7 @@ a {
 /*------------- Header ----------------*/
 .header {
     background: var(--nav-color);
-    padding: 7rem var(--padding-inline) 0 var(--padding-inline);
+    padding: 8rem var(--padding-inline) 7rem var(--padding-inline);
     text-align: center;
 }
 
@@ -443,11 +443,11 @@ section {
 
 .oscuro {
     --c2: #ffd369;
-    --bground: #fafafa;
+    --bground: #f3f2ef;
     --txt: #4e4e4e;
     --txt-secondary: #555;
-    --nav-color: #f6f6f6;
+    --nav-color: #fff;
     --border-secondary: solid 1px #cbcbca;
     --svg: invert(50%);
-    --transparent-color: #f2f2f0;
+    --transparent-color: #fff;
 }
