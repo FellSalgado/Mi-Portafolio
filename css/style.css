@@ -71,6 +71,7 @@ a {
 .space-between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .grid-auto {
@@ -87,30 +88,45 @@ a {
 }
 
 /*------------- Navbar --------------*/
-.navbar {
+.main-header {
     position: fixed;
     width: 100%;
-    padding: 0.4rem var(--padding-inline);
     background-color: var(--nav-color);
-    z-index: 90;
+    padding-inline: var(--padding-inline);
+    z-index: 99;
 }
 
-.navbar ul {
+.button-menu {
+    display: none;
+}
+.main-nav {
+    position: static;
+    border: solid 1px aquamarine;
+}
+
+.nav-links {
     display: flex;
     gap: 2.1rem;
+    border: solid 1px blueviolet;
+    background: var(--nav-color);
 }
 
-.navbar ul a:hover {
-    border-bottom: solid 2px var(--c1);
+.link-item {
+    font-weight: bold;
+    color: #444;
 }
-
-.navbar .space-between .btn {
-    background-color: var(--nav-color);
-    color: var(--txt);
-    border: var(--border-color);
-    padding-inline: 5px;
-    border-radius: 0.5rem;
-    margin-left: 1rem;
+.link-item::after {
+    position: absolute;
+    content: "";
+    background-color: var(--c1);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+.link-item:hover::after {
+    width: 100%;
 }
 
 /*------------- Header ----------------*/
@@ -152,7 +168,7 @@ a {
     }
 }
 
-.header button {
+/*.header button {
     all: unset;
     border: solid 2px;
     border-image-source: linear-gradient(
@@ -160,7 +176,7 @@ a {
     );
     border-image-slice: 4;
     padding-inline: 8px;
-}
+}*/
 
 .header .icon {
     position: absolute;
@@ -188,15 +204,16 @@ a {
 }
 
 /*------------- Main -----------------*/
-section {
-    padding: 3rem var(--padding-inline) 3rem var(--padding-inline);
+main {
+    padding-inline: var(--padding-inline);
 }
 
-.container {
+main > section {
     padding: var(--padding-inline);
     background-color: var(--transparent-color);
     border: var(--border-secondary);
     border-radius: 7px;
+    margin-bottom: 3rem;
 }
 
 .card {
@@ -220,7 +237,6 @@ section {
 
 #education section {
     display: flex;
-    padding: 0;
 }
 
 #education section h2 {
@@ -261,7 +277,7 @@ section {
     background-color: var(--transparent-color);
 }
 
-.btn .btn-content {
+#contacto .btn .btn-content {
     width: 8rem;
     background-clip: padding-box;
     background-color: var(--bground);
@@ -272,12 +288,12 @@ section {
     transition-timing-function: ease;
 }
 
-.btn .button-bg {
+#contacto .btn .button-bg {
     height: 1.8rem;
     z-index: -2;
 }
 
-.btn .button-bg:before {
+#contacto .btn .button-bg:before {
     border: 12px solid transparent;
     background-clip: padding-box;
     filter: blur(36px);
@@ -286,7 +302,7 @@ section {
     z-index: -1;
 }
 
-.btn .button-bg, .btn .button-bg:before {
+#contacto .btn .button-bg, .btn .button-bg:before {
     position: absolute;
     width: 8.1rem;
     content: "";
@@ -297,32 +313,32 @@ section {
     );
 }
 
-.btn .bg-1 {
+#contacto .btn .bg-1 {
     -webkit-animation: background-1 8s infinite;
     animation: background-1 8s infinite;
 }
 
-.btn .bg-1, .btn .bg-1:before {
+#contacto .btn .bg-1, .btn .bg-1:before {
     --start-color: var(--c1);
     --end-color: var(--cc1);
 }
 
-.btn .bg-2 {
+#contacto .btn .bg-2 {
     -webkit-animation: background-2 8s infinite;
     animation: background-2 8s infinite;
 }
 
-.btn .bg-2, .btn .bg-2:before {
+#contacto .btn .bg-2, .btn .bg-2:before {
     --start-color: var(--c2);
     --end-color: var(--cc2);
 }
 
-.btn .bg-3 {
+#contacto .btn .bg-3 {
     -webkit-animation: background-3 8s infinite;
     animation: background-3 8s infinite;
 }
 
-.btn .bg-3, .btn .bg-3:before {
+#contacto .btn .bg-3, .btn .bg-3:before {
     --start-color: var(--c3);
     --end-color: var(--cc3);
 }
@@ -431,11 +447,62 @@ section {
     :root {
         --padding-inline: 2rem;
     }
-    .navbar p {
-        display: none;
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        margin-left: -100%;
+        transition: all 0.2s linear;
+        background-color: rgba(0,0,0,.6)
     }
-    .navbar ul {
-        gap: 1rem;
+    .main-nav.show {
+        margin-left: 0;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+        padding-top: 3rem;
+        background-color: rgb(250, 250, 250);
+        border-right: 1px solid transparent;
+        box-shadow: 0 8px 10px -5px rgb(0 0 0 / 20%), 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%);
+    }
+    .button-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        z-index: 200;
+    }
+    .button-menu span {
+        position: relative;
+        width: 37px;
+        height: 4px;
+        margin-bottom: 5px;
+        background: #444444;
+        border-radius: 3px;
+        transform-origin: 4px 0px;
+        transition: all 0.2s linear;
+    } 
+    .button-menu.close span {
+        opacity: 1;
+        transform: rotate(45deg) translate(0px, 0px);
+        background: #ffffff;
+    }
+    .button-menu.close span:nth-child(2) {
+        transform: rotate(-45deg) translate(-8px, 5px);
+    }
+    .button-menu.close span:nth-child(3) {
+        display: none;
     }
     .a {
         top: 4rem;
@@ -449,10 +516,10 @@ section {
         top: 10rem;
         right: 1.4rem;
     }
-    #about, #skills, #education, #projects {
-        padding: 1rem 0 0 0;
+    main {
+        padding-inline: 0;
     }
-    .container {
+    main > section {
         border: none;
         border-radius: 0;
     }
@@ -471,142 +538,3 @@ section {
     --svg: invert(50%);
     --transparent-color: #fff;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .main-header {
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 0 0.4rem;
-  }
-  
-  .main-logo {
-    color: black;
-    font-size: 32px;
-    text-decoration: none;
-  }
-  
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    margin-left: -100%;
-    transition: all 0.2s linear;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-  }
-  
-  .main-nav.show {
-    margin-left: 0;
-  }
-  
-  .nav-links {
-    background-color: rgb(250, 250, 250);
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .link-item {
-    margin-top: 2rem;
-    color: #444444;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  
-  .link-item::after {
-    position: absolute;
-    content: "";
-    background-color: black;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    transition: 0.3s ease all;
-  }
-  
-  .link-item:hover::after {
-    width: 100%;
-  }
-  
-  .button-menu {
-    z-index: 200;
-    width: 40px;
-    height: 40px;
-    border: none;
-    display: flex;
-    background: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .button-menu span {
-    width: 37px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #444444;
-    border-radius: 3px;
-    transform-origin: 4px 0px;
-    transition: all 0.2s linear;
-  }
-  
-  .button-menu.close span {
-    opacity: 1;
-    transform: rotate(45deg) translate(0px, 0px);
-    background: #ffffff;
-  }
-  
-  .button-menu.close span:nth-child(2) {
-    transform: rotate(-45deg) translate(-8px, 5px);
-  }
-  
-  .button-menu.close span:nth-child(3) {
-    display: none;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .button-menu {
-      display: none;
-    }
-  
-    .main-logo {
-      flex-basis: 30%;
-    }
-  
-    .main-nav {
-      position: static;
-      margin-left: 0;
-      flex-basis: 70%;
-      height: 100%;
-    }
-  
-    .nav-links {
-      width: 100%;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-end;
-      background: white;
-    }
-  
-    .link-item {
-      display: inline-block;
-      margin-top: 0;
-      margin-right: 2rem;
-    }
-  }

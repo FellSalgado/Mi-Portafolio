@@ -3,8 +3,6 @@ function cambiarModo() {
     cuerpo.classList.toggle("oscuro");
 }
 
-//  seleccionamos los dos elementos que serán clickables
-
 const toggleButton = document.getElementById("button-menu");
 const navWrapper = document.getElementById("nav");
 
