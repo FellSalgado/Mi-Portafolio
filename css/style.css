@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
 :root {
     --c1: #8c8cf0;
     --c2: #f0f08c;
@@ -42,7 +43,7 @@ h1, h2 {
 }
 
 h1 {
-    font: normal 500 2rem var(--font-family);
+    font: normal 500 2rem Poppins, var(--font-family);
     margin-bottom: 1rem;
 }
 
@@ -77,13 +78,7 @@ a {
 .grid-auto {
     display: grid;
     margin-top: 2rem;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(
-            150px,
-            1fr
-        )
-    );
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 40px;
 }
 
@@ -101,32 +96,22 @@ a {
 }
 .main-nav {
     position: static;
-    border: solid 1px aquamarine;
+    padding: 1rem 0;
 }
 
-.nav-links {
+nav ul {
     display: flex;
     gap: 2.1rem;
-    border: solid 1px blueviolet;
     background: var(--nav-color);
 }
 
 .link-item {
     font-weight: bold;
-    color: #444;
+    color: var(--txt);
 }
-.link-item::after {
-    position: absolute;
-    content: "";
-    background-color: var(--c1);
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    transition: 0.3s ease all;
-}
-.link-item:hover::after {
-    width: 100%;
+
+.link-item:hover {
+    border-bottom: solid 2px var(--c1);
 }
 
 /*------------- Header ----------------*/
@@ -137,35 +122,13 @@ a {
 }
 
 .header h1 {
-    font: normal 500 2.5rem 'Bebas neue';
+    font: normal 500 clamp(2rem, 8vw, 3rem) 'Bebas neue';
 }
 
 .header h1 .text-color {
     background: linear-gradient(10deg, var(--c1) 40%, var(--cc1) 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.header .animation {
-    display: block;
-    white-space: nowrap;
-    border-right: 3px solid;
-    width: 12ch;
-    animation: typing 2s steps(12),
-    blink 5s infinite step-end alternate;
-    overflow: hiden;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
 }
 
 /*.header button {
@@ -179,28 +142,14 @@ a {
 }*/
 
 .header .icon {
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
+    border: solid 10px var(--border-secondary);
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 .header .icon svg {
+    border: solid 2px var(--border-secondary);
     filter: var(--svg);
-}
-
-.a {
-    top: 4rem;
-    right: 14rem;
-}
-
-.b {
-    top: 6.8rem;
-    right: 12rem;
-}
-
-.c {
-    top: 10rem;
-    right: 11.4rem;
 }
 
 /*------------- Main -----------------*/
@@ -220,6 +169,18 @@ main > section {
     border: var(--border-color);
     border-radius: 4px;
     box-shadow: 0 0 10px rgb(50 50 50 / 10%);
+}
+
+.button {
+    border: 1px solid var(--c1);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+}
+
+#about {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
 }
 
 #skills .card {
@@ -460,14 +421,14 @@ main > section {
     .main-nav.show {
         margin-left: 0;
     }
-    .nav-links {
+    nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 70%;
         height: 100%;
         padding-top: 3rem;
-        background-color: rgb(250, 250, 250);
+        background-color: var(--nav-color);
         border-right: 1px solid transparent;
         box-shadow: 0 8px 10px -5px rgb(0 0 0 / 20%), 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%);
     }
@@ -492,7 +453,7 @@ main > section {
         border-radius: 3px;
         transform-origin: 4px 0px;
         transition: all 0.2s linear;
-    } 
+    }
     .button-menu.close span {
         opacity: 1;
         transform: rotate(45deg) translate(0px, 0px);
@@ -503,18 +464,6 @@ main > section {
     }
     .button-menu.close span:nth-child(3) {
         display: none;
-    }
-    .a {
-        top: 4rem;
-        right: 4rem;
-    }
-    .b {
-        top: 6.8rem;
-        right: 2rem;
-    }
-    .c {
-        top: 10rem;
-        right: 1.4rem;
     }
     main {
         padding-inline: 0;
@@ -537,4 +486,16 @@ main > section {
     --border-secondary: solid 1px #cbcbca;
     --svg: invert(50%);
     --transparent-color: #fff;
+}
+
+.fadeTop {
+    position: absolute;
+    opacity: 0; 
+    transform: translateY(10vh);
+    transition: all 2s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
