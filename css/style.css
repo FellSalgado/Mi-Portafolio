@@ -85,7 +85,7 @@ a {
 .navbar {
     position: fixed;
     width: 100%;
-    background-color: var(--c1);
+    background-color: var(--nav-color);
     padding: 0.3rem var(--padding-inline);
     border-bottom: solid 1px rgba(255, 255, 255, .1);
     z-index: 99;
@@ -144,17 +144,14 @@ nav ul {
 }
 
 /*------------- Main -----------------*/
-main {
-    padding-inline: var(--padding-inline);
-}
-
 section:not(#education section) {
     padding: var(--padding-inline);
+    margin: var(--padding-inline);
     background-color: var(--transparent-color);
     backdrop-filter: blur(15px) saturate(180%);
     border: var(--border-secondary);
     border-radius: 7px;
-    margin-bottom: 3rem;
+    margin-top: 0;
 }
 
 .card {
@@ -196,13 +193,9 @@ section:not(#education section) {
     padding: 1.5rem;
 }
 
-#skills .card .icon {
-    margin-bottom: 1rem;
-    border-radius: 100%;
-    border: var(--border-secondary);
+#skills svg {
     width: 3rem;
     height: 3rem;
-    padding: 12px;
 }
 
 #education section {
@@ -414,9 +407,6 @@ section:not(#education section) {
 
 /*--------- Responsive design --------*/
 @media (max-width: 700px) {
-    :root {
-        --padding-inline: 2rem;
-    }
     .navbar {
         padding: 0;
     }
@@ -473,13 +463,11 @@ section:not(#education section) {
     .button-menu.close span:nth-child(3) {
         display: none;
     }
-    main {
-        padding-inline: 0;
-    }
     section:not(#education section) {
         border: none;
         border-radius: 0;
         margin-bottom: 1rem;
+        margin-inline: 0;
     }
     #about {
         margin-top: 1rem;
