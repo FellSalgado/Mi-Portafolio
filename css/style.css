@@ -467,7 +467,7 @@ section:not(#education section) {
         border: none;
         border-radius: 0;
         margin-bottom: 1rem;
-        margin-inline: 0;
+        margin: 0;
     }
     #about {
         margin-top: 1rem;
