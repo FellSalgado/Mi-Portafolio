@@ -468,6 +468,7 @@ section:not(#education section) {
         border-radius: 0;
         margin-bottom: 1rem;
         margin: 0;
+        background-color: #8c8cf0;
     }
     #about {
         margin-top: 1rem;
