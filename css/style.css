@@ -7,7 +7,7 @@
     --cc1: #c384f8; /*#738ed9 #f3d990*/
     --cc2: #a7f884;
     --cc3: #84f8c6;
-    --bground: #030309;
+    --bground: #030309; /* #030309 */
     --txt: #F9F9FE;
     --txt-secondary: #999;
     --nav-color: rgb(12, 12, 18);
@@ -120,6 +120,7 @@ nav ul {
     background: var(--nav-color);
     padding: 8rem var(--padding-inline) 7rem var(--padding-inline);
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .header h1 {
@@ -496,7 +497,44 @@ section:not(#education section) {
     --transparent-color: #fff;
 }
 
-.fadeTop {
+.figura {
+    position: fixed;
+    bottom: -8rem;
+    right: -8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 16rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotar 40s infinite;
+}
+
+.figura .figura {
+    position: static;
+    width: 70%;
+    height: 70%;
+}
+
+.figura .circle {
+    position: fixed;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-fondo);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+@keyframes rotar {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .fadeTop {
     opacity: 0;
     transition: ease 1000ms;
     transition-property: opacity, transform;
@@ -506,4 +544,4 @@ section:not(#education section) {
 .visible {
     opacity: 1;
     transform: translateZ(0);
-}
+} */
