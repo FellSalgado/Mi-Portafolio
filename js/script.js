@@ -28,13 +28,26 @@ navWrapper.addEventListener("click", e => {
     }
 });
 
-window.addEventListener('scroll', function()  {
+/* parallax */
+let uno = document.querySelector('.parallax');
+let dos = document.querySelector('.parallax2');
+let tres = document.querySelector('.parallax3');
+function scrollParallax() {
+    let scrollTop = document.documentElement.scrollTop;
+    uno.style.transform = 'translateY('+ scrollTop * -0.4 + 'px)';
+    dos.style.transform = 'translateY('+ scrollTop * -0.2 + 'px)';
+    tres.style.transform = 'translateY('+ scrollTop * -0.1 + 'px)';
+}
+
+window.addEventListener('scroll', scrollParallax);
+
+/* window.addEventListener('scroll', function()  {
     let element = document.getElementById('scroll-content');
     let screenSize = window.innerHeight;
-  
+
     if(element.getBoundingClientRect().top < screenSize) {
       element.classList.add('visible');
     } else {
       element.classList.remove('visible');
     }
-});
+}); */
