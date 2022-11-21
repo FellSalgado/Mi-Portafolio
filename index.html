@@ -8,7 +8,7 @@
     <title>Felix Salgado</title>
     
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -20,7 +20,7 @@
                 <a class="link-item" href="#skills">Habilidades</a>
                 <a class="link-item" href="#education">Educación</a>
                 <a class="link-item" href="#projects">Proyectos</a>
-                <button class="boton-modo" type="button" onclick="cambiarModo()">oscuro - claro</button>
+                <button id="button-theme" class="button-theme" type="button"><span></span></button>
             </ul>
         </nav>
         <button id="button-menu" class="button-menu flex-center">
@@ -60,14 +60,14 @@
 
     <!-- Main -->
     <main>
-        <section class="parallax3 space-between" id="about" style="--bg: var(--c1)">
+        <section class="space-between" id="about" style="--bg: var(--c1)">
             <div>
                 <h1>Sobre mi</h1>
                 <p>
                 Soy desarrollador Front-End con sede en Leticia, Colombia, mi objetivo es expandir mi conocimiento y crecer como desarrollador.
                 </p>
             </div>
-            <div class="photo-profile">
+            <div class="parallax3 photo-profile">
             </div>
         </div>
         </section>
@@ -201,11 +201,12 @@
                 </div>
                 <div class="container">
                     <div class="card" data-aos="fade-up">
+                        <div class="sombra"></div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="card" data-aos="fade-up">
-                        <img src="./recursos/img/Web 1920 – 1.png" alt="">
+                        <div class="sombra"></div>
                     </div>
                 </div>
         </section>

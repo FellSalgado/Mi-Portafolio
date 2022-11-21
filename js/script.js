@@ -1,6 +1,9 @@
-function cambiarModo() {
-    let cuerpo = document.body;
-    cuerpo.classList.toggle("oscuro");
+const body = document.body;
+const buttonTheme = document.getElementById("button-theme");
+
+buttonTheme.onclick = function() {
+    body.classList.toggle("oscuro");
+    buttonTheme.classList.toggle("active");
 }
 
 const toggleButton = document.getElementById("button-menu");
