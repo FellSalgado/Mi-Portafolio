@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Traversy Media is a leader in free web development tutorials on YouTube and project-based courses on Udemy and other platforms"/>
     <title>Felix Salgado</title>
-    
+
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -47,6 +48,7 @@
         </div>
     </header>
 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346.74 751.62"><defs><style>.cls-1{fill:none;stroke:#a386bd;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M36.81,31.06C234.93,214,275.54,349.88,273.09,442.61c-1.36,51.41-18,168.25,35.73,260.56a219,219,0,0,0,36.88,47.37"/><circle class="cls-1" cx="20.66" cy="20.66" r="19.16"/></g></g></svg>
     <div class="figura">
         <div class="figura">
             <div class="figura">
@@ -60,11 +62,11 @@
 
     <!-- Main -->
     <main>
-        <section class="space-between" id="about" style="--bg: var(--c1)">
+        <section id="about" style="--bg: var(--c1)">
             <div>
                 <h1>Sobre mi</h1>
                 <p>
-                Soy desarrollador Front-End con sede en Leticia, Colombia, mi objetivo es expandir mi conocimiento y crecer como desarrollador.
+                Soy desarrollador <span class="text-color">Front-End</span> con sede en Leticia, Colombia, mi objetivo es expandir mi conocimiento y crecer como desarrollador.
                 </p>
             </div>
             <div class="parallax3 photo-profile">
@@ -74,7 +76,7 @@
 
         <section class="parallax4" id="skills" style="--bg: var(--c2)">
             <h1>Habilidades</h1>
-            <p>Lorem ipsum dolor sit amet
+            <p>Lorem <span class="text-color">ipsum dolor</span> sit amet
             consectetur adipisicing elit. Sed quia magni, animi earum porro vel nobis rem
             explicabo numquam accusamus accusantium. Veritatis, reprehenderit voluptatum facilis atque unde obcaecati dicta ad?
             </p>
@@ -122,7 +124,7 @@
             <h1>Educación</h1>
             <p>
                 Lorem ipsum
-                sit amet consectetur adipisicing elit. Velit error optio, autem ut modi delectus illum aut consequuntur tempora
+                sit amet <span class="text-color">consectetur</span> adipisicing elit. Velit error optio, autem ut modi delectus illum aut consequuntur tempora
                 et doloribus officia, aliquid accusamus culpa veniam quidem nam molestiae praesentium!
             </p>
             <br>
@@ -183,10 +185,8 @@
                     <div class="circle"></div>
                 </div>
                 <div>
-                    <h2>Excel Basico</h2>
-                    <p>Servicio Nacional de Aprendizaje (SENA) <br>
-                        Expedición: ago.2022.Sin fecha de vencimiento <br>
-                        ID de la credencial <br>
+                    <h2>Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
                         9578337936TI1064981680C</p>
                 </div>
             </section>
@@ -195,17 +195,30 @@
         
         <section id="projects" data-aos="fade-up" style="--bg: var(--c1)">
                 <h1>Proyectos</h1>
-                <div class="container">
-                    <div class="card" data-aos="fade-up">
+                <div class="row">
+                    <div class="card-projects" data-aos="fade-up">
+                        <div class="">
+                            <nav class="space-between">
+                                <a href="">uno</a>
+                                <ul>
+                                    <a href="">home</a>
+                                    <a href="">tiket</a>
+                                    <a href="">services</a>
+                                </ul>
+                            </nav>
+                            <header>
+                                <td></td>
+                            </header>
+                        </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="card" data-aos="fade-up">
+                <div class="row">
+                    <div class="card-projects" data-aos="fade-up">
                         <div class="sombra"></div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="card" data-aos="fade-up">
+                <div class="row">
+                    <div class="card-projects" data-aos="fade-up">
                         <div class="sombra"></div>
                     </div>
                 </div>
@@ -233,6 +246,7 @@
             <li><a href="">Twitter</a></li>
             <li><a href="https://www.linkedin.com/in/felix-salgado-949a99247/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B9krVdxnCT%2FGSgfOkd2q5aQ%3D%3D">Linkedin</a></li>
             <li><p>| Elaborado con 💙 por Felix Salgado</p></li>
+            <li></li>
         </ul>
     </footer>
 

@@ -35,12 +35,11 @@ navWrapper.addEventListener("click", e => {
 let uno = document.querySelector('.parallax');
 let dos = document.querySelector('.parallax2');
 let tres = document.querySelector('.parallax3');
-let cuatro = document.querySelector('.parallax4');
 function scrollParallax() {
     let scrollTop = document.documentElement.scrollTop;
     uno.style.transform = 'translateY('+ scrollTop * -0.4 + 'px)';
     dos.style.transform = 'translateY('+ scrollTop * -0.2 + 'px)';
-    tres.style.transform = 'translateY('+ scrollTop * 0.1 + 'px)';
+    tres.style.transform = 'translateY('+ scrollTop * 0.2 + 'px)';
 }
 
 window.addEventListener('scroll', scrollParallax);
