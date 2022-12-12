@@ -5,30 +5,23 @@
 #projects .card-projects {
     position: relative;
     overflow: hidden;
-    width: 26rem;
-    height: 16rem;
+    width: 36rem;
+    height: 22rem;
+    background: linear-gradient(rgb(140 100 250 / 10%), transparent);
     margin-bottom: 10rem;
     padding: var(--projects-padding);
     border-radius: 6px;
 }
 
 #projects .card-projects::before {
-    content: "";
     position: absolute;
+    content: "";
     inset: 0px;
     border-radius: inherit;
     padding: 1px;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 120%);
     -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
     -webkit-mask-composite: xor;
-}
-
-#projects .card-projects::after {
-    content: "";
-    position: absolute;
-    inset: 0px;
-    background: linear-gradient(90deg, rgb(140 100 250 / 10%), rgb(20 20 30 / 10%));
-    z-index: 1;
 }
 
 .card-projects * {
@@ -43,9 +36,12 @@
 .uno {
     display: flex;
     height: 100%;
-    background: #252030;
+    background: url(../recursos/img/image.webp) center center no-repeat;
+    filter: brightness(120%);
+    background-size: 100%;
+    border-radius: 16px;
 }
-
+/* 
 .uno nav {
     border-right: 1px solid #202020;
     padding-right: var(--projects-padding);
@@ -89,4 +85,4 @@
     background-color: #60a0dd;
     grid-column: 2 / 3;
     grid-row: 3;
-}
+} */
