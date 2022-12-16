@@ -148,7 +148,7 @@ nav ul {
 }
 
 .header h1 {
-    font: normal 500 clamp(3rem, 8vw, 80px) 'Bebas neue';
+    font: normal 500 clamp(3rem, 8vw, 80px) '';
 }
 
 .header h1 .text-color {
@@ -438,7 +438,7 @@ main > section {
 }
 
 .footer li {
-    margin-right: 1rem;
+    margin-inline: 0.5rem;
 }
 
 .footer a {
@@ -449,6 +449,11 @@ main > section {
     text-decoration: underline;
 }
 
+.footer svg {
+    width: 1rem;
+    height: 1rem;
+    filter: var(--svg);
+}
 
 ::selection {
     color: rgb(208, 214, 224);
